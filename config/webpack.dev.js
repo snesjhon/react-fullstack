@@ -14,6 +14,9 @@ module.exports = merge(common, {
     hot: true,
     inline: true,
     historyApiFallback: true,
+    proxy: {
+      "/api": "http://localhost:9000"
+    },
     stats: {
       assets: false,
       children: false,

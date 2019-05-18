@@ -4,11 +4,12 @@
   "description": "My Own Boilerplate",
   "main": "index.js",
   "scripts": {
-    "devApp": "webpack-dev-server --config ./config/webpack.dev.js",
-    "devServer": "nodemon ./api/index.js",
+    "devApp": "webpack-dev-server --config ./config/webpack.dev.js --open",
+    "devServer": "NODE_ENV=development nodemon ./api/index.js",
     "dev": "concurrently \"npm run devApp\" \"npm run devServer\"",
     "buildApp": "webpack --config ./config/webpack.prod.js",
-    "buildServer": "node ./api/index.js"
+    "buildServer": "open http://localhost:9000 & NODE_ENV=production node ./api/index.js",
+    "build": "concurrently \"npm run buildApp\" \"npm run buildServer\""
   },
   "repository": {
     "type": "git",

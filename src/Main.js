@@ -10,6 +10,11 @@ class Main extends Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount() {
+    fetch("/api")
+      .then(res => res.json())
+      .then(users => console.log(users));
+  }
   render() {
     return <Container>testing</Container>;
   }
